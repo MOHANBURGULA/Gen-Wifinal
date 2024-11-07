@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HOME PAGE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="example.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<style>
+  /* example.css */
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.upper {
+  border: 5px solid;
+  margin: 1px;
+  padding: 1px;
+  text-align: center;
+  font-size: x-large;
+  font-weight: 500;
+  color: antiquewhite;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #3b82f6, #1e40af);
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.navbar-brand:hover, .navbar-nav .nav-link:hover {
+  color: #000000 !important;
+}
+
+.navbar-toggler {
+  background-color: #ffffff;
+}
+
+.lefthalf {
+  text-align: center;
+  padding: 20px;
+  height: 50vh;
+  background: url('https://media.istockphoto.com/id/2123102152/photo/global-business-structure-of-network-businessman-touch-compliance-icon-and-internet.jpg?s=612x612&w=0&k=20&c=PIqvKbNFvaGY22jbin8ZNvTxuQZSV85XWmk_w3cqyVM=') no-repeat center center/cover;
+  color: white;
+}
+
+.lefthalf h1 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.lefthalf p {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Features Section */
+#features {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.feature-card {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+  margin: 0;
+  border-left: 4px solid #007bff;
+  padding-left: 15px;
+}
+
+p {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  padding: 20px 0;
+  background-color: #333;
+  color: #ccc;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+</style>
+
+<body>
+
+  <div class="upper">
+    <p>Welcome To Gen-Wi Document generating Site </p>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><b>Gen-Wi</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link active" aria-current="page" href="#" id="homebtn">Home</a>
+          <a class="nav-link" href="#" id="aboutbtn">About</a>
+          <a class="nav-link" href="#" id="dashboardbtn">Dashboard</a>
+          <a class="nav-link" href="#" id="helpbtn">Help</a>
+          <a class="nav-link" href="#" id="contactbtn">Contact Us</a>
+          <a class="nav-link" href="#" id="loginbtn">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <br>
+  
+  <!-- Left half with background image -->
+  <div class="lefthalf">
+    <h1>Gen-Wi Document Generator</h1>
+    <p class="text">Unleash the power of intelligent document creation with Gen-Wi document creator.
+      Transform any text prompt into professional, visually appealing documents in seconds</p>
+    <button class="button" id="btn">Get Started</button>
+  </div>
+
+  <!-- Features Section -->
+  <section id="features" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Features</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Easy to Use</h3>
+            <p>Create documents with a simple and intuitive interface.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Customizable Templates</h3>
+            <p>Choose from a range of templates to match your needs.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Time Saving</h3>
+            <p>From text prompt to a crafted document in seconds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">What Users Say</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <blockquote>"Gen-Wi made document creation a breeze! Highly recommend."</blockquote>
+          <p>- Chidambaram</p>
+        </div>
+        <div class="col-md-6 mb-4">
+          <blockquote>"The templates are stunning and saved me so much time."</blockquote>
+          <p>- Ganesh </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-dark text-white text-center">
+    <p>&copy; 2024 Gen-Wi. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="home.js"></script>
+  <script>
+    const helpbtn = document.getElementById("helpbtn");
+helpbtn.addEventListener("click", () => {
+    window.location.href = "help.html";
+});
+//evnet listener for home button
+const aboutbtn = document.getElementById("aboutbtn");
+aboutbtn.addEventListener("click", () => {
+    window.location.href = "about.html";
+});
+//evnt listener for home button
+const contactbtn = document.getElementById("contactbtn");
+contactbtn.addEventListener("click", () => {
+    window.location.href = "contact.html";
+});
+//ev listener for home button
+const homebtn = document.getElementById("homebtn");
+homebtn.addEventListener("click", () => {
+    window.location.href = "home.html";
+});
+
+// event listeners for getstarted button to redirect it to login page 
+const getstarted = document.getElementById("btn");
+getstarted.addEventListener("click", () => {
+    window.location.href = "loginform1.html";
+});
+// event listeners for login button 
+const loginbtn = document.getElementById("loginbtn");
+loginbtn.addEventListener("click", () => {
+    window.location.href = "loginform1.html";
+});
+const dashboard = document.getElementById("dashboardbtn");
+dashboard.addEventListener("click", () => {
+    window.location.href = "index.html";
+});
+
+  </script>
+</body>
+</html>
