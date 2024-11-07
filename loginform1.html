@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login & Sign Up Form</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url(1.jpeg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .wrapper {
+            width: 420px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(60px);
+            color: white;
+            border-radius: 10px;
+            padding: 30px 40px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .tabs button.active {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        .form-content {
+            display: none;
+        }
+        .form-content.active {
+            display: block;
+        }
+        .input-box {
+            width: 100%;
+            height: 50px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            color: white;
+            padding: 20px;
+            font-size: 16px;
+        }
+        .input-box input::placeholder {
+            color: white;
+        }
+        .input-box box-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+        .remember-forget {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .remember-forget a {
+            color: white;
+            text-decoration: none;
+        }
+        .btn {
+            width: 100%;
+            height: 45px;
+            background: white;
+            border: none;
+            border-radius: 40px;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .register-link p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .register-link a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="tabs">
+        <button id="login-tab" class="active" onclick="switchForm('login')">Login</button>
+        <button id="signup-tab" onclick="switchForm('signup')">Sign Up</button>
+    </div>
+    
+    <div id="login" class="form-content active">
+        <form action="">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <box-icon name='user'></box-icon>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <box-icon name='lock-alt'></box-icon>
+            </div>
+            <div class="remember-forget">
+                <label><input type="checkbox"> Remember Me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+
+    <div id="signup" class="form-content">
+        <form action="">
+            <h1>Sign Up</h1>
+            <div class="input-box">
+                <input type="text" id="signupName" placeholder="Name" required>
+                <box-icon name='user'></box-icon>
+            </div>
+            <div class="input-box">
+                <input type="email" id="signupEmail" placeholder="Email Address" required>
+                <box-icon name='envelope'></box-icon>
+            </div>
+            <div class="input-box">
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <box-icon name='lock-alt'></box-icon>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+    </div>
+
+    <div class="register-link">
+        <p>Already have an account? <a href="#" onclick="switchForm('login')">Login</a></p>
+    </div>
+</div>
+
+<script>
+    function switchForm(formId) {
+        document.querySelectorAll('.form-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        document.getElementById(formId).classList.add('active');
+        
+        document.querySelectorAll('.tabs button').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.getElementById(formId + '-tab').classList.add('active');
+    }
+</script>
+
+</body>
+</html>
