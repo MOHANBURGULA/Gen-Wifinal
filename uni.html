@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <style>
-        *{
+        * {
             font-family: 'Poppins', sans-serif;
         }
         body {
@@ -19,38 +20,27 @@
             margin: 0;
             padding: 0;
         }
-
         h1 {
             text-align: center;
             margin-top: 20px;
             color: #374151;
             font-size: 2.5rem;
         }
-
-        /* Navbar Styling */
         .navbar {
             background: linear-gradient(90deg, #3b82f6, #1e40af);
             padding: 15px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
-
         .navbar-brand,
         .navbar-nav .nav-link {
             color: #ffffff !important;
             font-weight: bold;
             font-size: 1.1rem;
         }
-
         .navbar-brand:hover,
         .navbar-nav .nav-link:hover {
             color: #a5b4fc !important;
         }
-
-        .navbar-toggler {
-            background-color: #ffffff;
-        }
-
-        /* Form Styling */
         form {
             max-width: 700px;
             margin: 40px auto;
@@ -58,16 +48,13 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-            color: #4b5563;
         }
-
         label {
             font-weight: bold;
             color: #1f2937;
             margin-top: 15px;
             display: block;
         }
-
         input,
         textarea {
             border-radius: 8px;
@@ -75,16 +62,7 @@
             padding: 10px;
             margin-top: 5px;
             width: 100%;
-            transition: border-color 0.3s ease;
         }
-
-        input:focus,
-        textarea:focus {
-            border-color: #3b82f6;
-            outline: none;
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
-        }
-
         button {
             background-color: #3b82f6;
             color: #ffffff;
@@ -94,40 +72,18 @@
             padding: 12px 25px;
             border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
             margin-top: 20px;
         }
-
         button:hover {
             background-color: #2563eb;
-            transform: translateY(-2px);
         }
-
-        .goto1 {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .goto1 a {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .goto1 a:hover {
-            color: #1e40af;
-            text-decoration: underline;
-        }
-
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
-
             form {
                 padding: 20px;
             }
-
             button {
                 font-size: 1rem;
             }
@@ -136,7 +92,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Gen-Wi</a>
@@ -146,11 +101,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" aria-current="page" href="#" id="homebtn">Home</a>
-                    <a class="nav-link" href="#" id="aboutbtn">About</a>
-                    <a class="nav-link" href="#">Templates</a>
-                    <a class="nav-link" href="#" id="helpbtn">Help</a>
-                    <a class="nav-link" href="#" id="contactbtn">Contact Us</a>
+                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="#">About</a>
+                    <!-- <a class="nav-link" href="#">Templates</a> -->
+                    <a class="nav-link" href="#">Help</a>
+                    <a class="nav-link" href="#">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -159,7 +114,6 @@
     <h1>Gen-Wi Document Generator</h1>
 
     <form id="documentForm">
-
         <label for="title">Document Title:</label>
         <input type="text" id="title" name="title" class="form-control" required>
 
@@ -169,14 +123,14 @@
         <label for="theme">Project Theme:</label>
         <input type="text" id="theme" name="theme" class="form-control" required>
 
-        <label for="members"> Team Members Name :</label>
-        <input type="text" id="members" name="members" class="form-control" required>
+        <label for="member1">Team Member 1 Name:</label>
+        <input type="text" id="member1" name="member1" class="form-control" required>
 
-        <label for="members">Team Members Name:</label>
-        <input type="text" id="members" name="members" class="form-control" required>
+        <label for="member2">Team Member 2 Name:</label>
+        <input type="text" id="member2" name="member2" class="form-control" required>
 
-        <label for="members"> Team Members Name:</label>
-        <input type="text" id="members" name="members" class="form-control" required>
+        <label for="member3">Team Member 3 Name:</label>
+        <input type="text" id="member3" name="member3" class="form-control" required>
 
         <label for="abstract">Abstract of the Project:</label>
         <textarea id="abstract" name="abstract" class="form-control" rows="4" required></textarea>
@@ -184,87 +138,142 @@
         <label for="mentor">Mentor Name:</label>
         <input type="text" id="mentor" name="mentor" class="form-control" required>
 
-        <label for="title">Document Title:</label>
-        <input type="text" id="title" name="title" class="form-control" required>
-
         <label for="author">Incharge Name:</label>
         <input type="text" id="author" name="author" class="form-control" required>
 
         <label for="content">Document Content:</label>
         <textarea id="content" name="content" class="form-control" rows="6" required></textarea>
 
+        <!-- <label for="template">Select Template:</label> -->
         <label for="template">Select Template:</label>
         <select id="template" name="template" class="form-control">
-            <option value="Template 1">Template 1</option>
-            <option value="Template 2">Template 2</option>
+            <option value="Template 1">Template 1 (Professional)</option>
+            <option value="Template 2">Template 2 (Modern)</option>
+            <option value="Template 3">Template 3 (Minimalistic)</option>
+            <option value="Template 4">Template 4 (Colorful)</option>
+            <option value="Template 5">Template 5 (Elegant)</option>
+            <option value="Template 6">Template 6 (Vibrant)</option>
+            <option value="Template 7">Template 7 (Artistic)</option>
+            <option value="Template 8">Template 8 (Gradient Inspired)</option>
         </select>
-
+        
+        
+        
         <button type="button" id="generatePDF" class="btn btn-success mt-3">Generate PDF</button>
-        <div class="goto1"><a href="loginform.html">Back to page</a></div>
+        <div class="text-center mt-3"><a href="loginform.html">Back to page</a></div>
     </form>
-
     <script>
         document.getElementById('generatePDF').addEventListener('click', function () {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
-
-            // Set background color
-            doc.setFillColor(240, 240, 240); // Light gray background
-            doc.rect(0, 0, 210, 297, 'F'); // Apply to entire page (A4 size)
-
-            // Add page border
-            doc.setLineWidth(0.5);
-            doc.setDrawColor(0, 0, 0);
-            doc.rect(10, 10, 190, 277); // Draws a rectangle as a border (x, y, width, height)
-
-            // Set margins for the content
-            const marginX = 15;
-            let currentY = 20; // Start position for text after top margin
-
-            // Capture form data
+            const pageHeight = doc.internal.pageSize.height;
+            const pageWidth = doc.internal.pageSize.width;
+            let yPosition = 20; // Start position for text
+        
+            // Gather form data
             const projectName = document.getElementById('projectName').value;
             const theme = document.getElementById('theme').value;
-            const members = document.getElementById('members').value;
+            const member1 = document.getElementById('member1').value;
+            const member2 = document.getElementById('member2').value;
+            const member3 = document.getElementById('member3').value;
             const abstract = document.getElementById('abstract').value;
             const mentor = document.getElementById('mentor').value;
             const title = document.getElementById('title').value;
             const author = document.getElementById('author').value;
             const content = document.getElementById('content').value;
             const template = document.getElementById('template').value;
-
-            // Add content to the PDF
-            doc.setFontSize(12);
-            doc.setTextColor(0, 0, 0); // Set text color to black
-
-            doc.text(`Project Name: ${projectName}`, marginX, currentY);
-            currentY += 10;
-            doc.text(`Project Theme: ${theme}`, marginX, currentY);
-            currentY += 10;
-            doc.text(`Team Members: ${members}`, marginX, currentY);
-            currentY += 10;
-            doc.text('Abstract:', marginX, currentY);
-            currentY += 10;
-            doc.text(abstract, marginX, currentY, { maxWidth: 180 }); // Limit width for better margins
-            currentY += 30;
-            doc.text(`Mentor: ${mentor}`, marginX, currentY);
-            currentY += 10;
-            doc.text(`Document Title: ${title}`, marginX, currentY);
-            currentY += 10;
-            doc.text(`Incharge Name: ${author}`, marginX, currentY);
-            currentY += 10;
-            doc.text('Content:', marginX, currentY);
-            currentY += 10;
-            doc.text(content, marginX, currentY, { maxWidth: 180 });
-            currentY += 40; // Leave space for additional content
-            doc.text(`Selected Template: ${template}`, marginX, currentY);
-
-            // Save the PDF
-            doc.save('Generated_Document.pdf');
+        
+            // Function to apply the selected template
+            function applyTemplate(doc) {
+                switch (template) {
+                    case 'Template 1':
+                        doc.setFont('Helvetica', 'normal');
+                        doc.setFontSize(16);
+                        doc.setFillColor(230, 240, 255); // Light Blue Background
+                        doc.setTextColor(34, 139, 34); // Forest Green
+                        break;
+                    case 'Template 2':
+                        doc.setFont('Times', 'italic');
+                        doc.setFontSize(14);
+                        doc.setFillColor(245, 245, 245); // Light Gray Background
+                        doc.setTextColor(0, 51, 102); // Dark Blue
+                        break;
+                    case 'Template 3':
+                        doc.setFont('Courier', 'normal');
+                        doc.setFontSize(18);
+                        doc.setFillColor(255, 248, 220); // Cornsilk Background
+                        doc.setTextColor(34, 34, 34); // Black
+                        break;
+                    case 'Template 4':
+                        doc.setFont('Helvetica', 'bold');
+                        doc.setFontSize(20);
+                        doc.setFillColor(224, 255, 255); // Light Cyan Background
+                        doc.setTextColor(0, 102, 204); // Royal Blue
+                        break;
+                    case 'Template 5':
+                        doc.setFont('Times', 'normal');
+                        doc.setFontSize(18);
+                        doc.setFillColor(240, 240, 240); // Soft Gray Background
+                        doc.setTextColor(75, 0, 130); // Indigo
+                        break;
+                    case 'Template 6':
+                        doc.setFont('Courier', 'italic');
+                        doc.setFontSize(16);
+                        doc.setFillColor(248, 240, 220); // Beige Background
+                        doc.setTextColor(160, 82, 45); // Sienna
+                        break;
+                    case 'Template 7':
+                        doc.setFont('Helvetica', 'italic');
+                        doc.setFontSize(14);
+                        doc.setFillColor(245, 245, 220); // Light Beige Background
+                        doc.setTextColor(0, 102, 204); // Royal Blue
+                        break;
+                    case 'Template 8':
+                        doc.setFont('Helvetica', 'bold');
+                        doc.setFontSize(16);
+                        doc.setFillColor(255, 228, 196); // Bisque Background
+                        doc.setTextColor(255, 69, 0); // Orange Red
+                        break;
+                    default:
+                        alert("Please select a valid template.");
+                        return false;
+                }
+                doc.rect(0, 0, pageWidth, pageHeight, 'F'); // Fill background
+                return true;
+            }
+        
+            // Function to add text with page break handling
+            function addTextWithPageBreak(text, x, y) {
+                const splitText = doc.splitTextToSize(text, pageWidth - 20);
+                for (let i = 0; i < splitText.length; i++) {
+                    if (y + 10 > pageHeight - 20) { // Check if the next line exceeds the page height
+                        doc.addPage(); // Add a new page
+                        applyTemplate(doc); // Apply the template to the new page
+                        y = 20; // Reset y position
+                    }
+                    doc.text(splitText[i], x, y);
+                    y += 10; // Move down for the next line
+                }
+                return y; // Return the new y position
+            }
+        
+            // Apply the template for the first page
+            if (!applyTemplate(doc)) return;
+        
+            // Add document content
+            yPosition = addTextWithPageBreak(Title: ${title}, 10, yPosition);
+            yPosition = addTextWithPageBreak(Project Name: ${projectName}, 10, yPosition);
+            yPosition = addTextWithPageBreak(Theme: ${theme}, 10, yPosition);
+            yPosition = addTextWithPageBreak(Team Members: ${member1}, ${member2}, ${member3}, 10, yPosition);
+            yPosition = addTextWithPageBreak(Abstract:, 10, yPosition);
+            yPosition = addTextWithPageBreak(abstract, 10, yPosition);
+            yPosition = addTextWithPageBreak(Mentor: ${mentor}, 10, yPosition);
+            yPosition = addTextWithPageBreak(Incharge: ${author}, 10, yPosition);
+            yPosition = addTextWithPageBreak(Content:, 10, yPosition);
+            yPosition = addTextWithPageBreak(content, 10, yPosition);
+        
+            // Save the generated PDF
+            doc.save(${title}.pdf);
         });
+        
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
